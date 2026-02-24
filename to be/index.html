@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика: глагол TO BE (Present Simple)</title>
+    <!-- Шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #2b3d4f 0%, #1a2b3a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .infographic {
+            max-width: 1300px;
+            width: 100%;
+            background: #f8faff;
+            border-radius: 60px 60px 50px 50px;
+            box-shadow: 0 30px 50px -10px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 240, 0.2);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Header с формами */
+        .header-to-be {
+            background: #0b2b44;
+            background-image: radial-gradient(circle at 30% 20%, #1f4b70, #062134);
+            padding: 30px 40px 25px;
+            color: white;
+            border-bottom: 6px solid #ffc857;
+        }
+
+        .header-to-be h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 0 #041a2b;
+        }
+
+        .header-to-be h1 span {
+            background: #ffc857;
+            color: #1d3b5a;
+            font-size: 2.2rem;
+            padding: 10px 25px;
+            border-radius: 100px;
+            text-shadow: none;
+            box-shadow: 0 5px 0 #b28229;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border-radius: 70px;
+            padding: 20px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-item {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 22px;
+            border-radius: 40px;
+            border: 1px solid #ffffff70;
+        }
+
+        .form-item i {
+            margin-right: 12px;
+            color: #ffdb9d;
+        }
+
+        /* три основные колонки: + / - / ? */
+        .columns-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 35px 30px 20px;
+        }
+
+        .col {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 40px;
+            padding: 25px 20px;
+            box-shadow: 0 12px 0 #cddbe9, 0 0 0 2px #b3c8dd;
+            border: 1px solid #ffffff;
+        }
+
+        .col-header {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 4px solid currentColor;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+
+        .col-pos .col-header {
+            color: #1b8c5e;
+        }
+
+        .col-neg .col-header {
+            color: #c73b3b;
+        }
+
+        .col-que .col-header {
+            color: #3a76b9;
+        }
+
+        .example-line {
+            background: #f0f5fd;
+            border-radius: 30px;
+            padding: 14px 18px;
+            margin: 12px 0;
+            font-weight: 500;
+            font-size: 1.25rem;
+            border-left: 12px solid;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 3px 0 #bacde0;
+        }
+
+        .col-pos .example-line {
+            border-left-color: #1b8c5e;
+        }
+
+        .col-neg .example-line {
+            border-left-color: #c73b3b;
+        }
+
+        .col-que .example-line {
+            border-left-color: #3a76b9;
+        }
+
+        .example-line i {
+            font-size: 1.5rem;
+            width: 35px;
+            color: #3f5e7a;
+        }
+
+        .badge {
+            background: #1e3a5f;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .short-answers {
+            background: #e7eef8;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .short-answers h3 {
+            color: #1e3a5f;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .short-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .short-item {
+            background: white;
+            border-radius: 40px;
+            padding: 12px 18px;
+            flex: 1 1 150px;
+            font-weight: 600;
+            box-shadow: 0 4px 0 #b3c6da;
+            border: 1px solid #dde5f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .short-item i.fa-check {
+            color: #12805c;
+        }
+
+        .short-item i.fa-xmark {
+            color: #b13e3e;
+        }
+
+        /* таблица форм */
+        .forms-panel {
+            background: #142b44;
+            color: white;
+            margin: 20px 30px 30px;
+            border-radius: 50px;
+            padding: 30px 30px 25px;
+            background-image: linear-gradient(145deg, #183f5c, #0a253a);
+        }
+
+        .forms-panel h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .forms-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .form-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 22px 15px;
+            backdrop-filter: blur(2px);
+            border: 1px solid #3b688b;
+        }
+
+        .pronoun {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffcf7a;
+            margin-bottom: 10px;
+        }
+
+        .verb-form {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: #ffcf7a;
+            color: #0b2b3f;
+            display: inline-block;
+            padding: 5px 30px;
+            border-radius: 60px;
+            margin: 10px 0;
+            border: 3px solid white;
+        }
+
+        .example-small {
+            font-size: 1rem;
+            opacity: 0.9;
+            background: #ffffff10;
+            padding: 8px;
+            border-radius: 40px;
+        }
+
+        /* отрицание и вопрос внизу */
+        .extra-strip {
+            display: flex;
+            flex-wrap: wrap;
+            background: #cddbe9;
+            padding: 20px 30px;
+            gap: 20px;
+            justify-content: center;
+            border-top: 6px solid #a0b9d0;
+        }
+
+        .neg-box,
+        .ques-box {
+            background: white;
+            border-radius: 40px;
+            padding: 20px 30px;
+            box-shadow: 0 5px 0 #99aec9;
+            flex: 1 1 300px;
+        }
+
+        .neg-box h3,
+        .ques-box h3 {
+            color: #1a3249;
+            margin-bottom: 20px;
+        }
+
+        .contractions {
+            background: #fdefcb;
+            border-radius: 40px;
+            padding: 20px 30px;
+            margin: 0 30px 30px;
+            border: 3px dashed #9b7e4b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="infographic">
+        <!-- Верхушка: to be + формы -->
+        <div class="header-to-be">
+            <h1>
+                TO BE
+                <span>Present Simple</span>
+            </h1>
+            <div class="form-row">
+                <div class="form-item"><i class="fas fa-user"></i> I <span
+                        style="background:#ffc857; color:#000; padding:4px 18px; border-radius: 40px;">am</span></div>
+                <div class="form-item"><i class="fas fa-user"></i> He / She / It <span
+                        style="background:#ffc857; color:#000; padding:4px 18px; border-radius: 40px;">is</span></div>
+                <div class="form-item"><i class="fas fa-users"></i> You / We / They <span
+                        style="background:#ffc857; color:#000; padding:4px 18px; border-radius: 40px;">are</span></div>
+            </div>
+        </div>
+
+        <!-- Три колонки: утверждение, отрицание, вопрос + краткие ответы -->
+        <div class="columns-container">
+            <!-- Утверждение -->
+            <div class="col col-pos">
+                <div class="col-header"><i class="fas fa-plus-circle"></i> Утверждение</div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>I <span style="color:#1b8c5e;">am</span>
+                        ready.</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>She <span
+                            style="color:#1b8c5e;">is</span> here.</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>They <span
+                            style="color:#1b8c5e;">are</span> students.</b></div>
+                <div style="margin-top: 25px;"><span class="badge">подлежащее + am/is/are</span></div>
+            </div>
+            <!-- Отрицание -->
+            <div class="col col-neg">
+                <div class="col-header"><i class="fas fa-minus-circle"></i> Отрицание</div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>I <span style="color:#c73b3b;">am
+                            not</span> late.</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>He <span
+                            style="color:#c73b3b;">isn’t</span> at home.</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b>We <span
+                            style="color:#c73b3b;">aren’t</span> busy.</b></div>
+                <div style="margin-top: 25px;"><span class="badge">подлежащее + am/is/are + not</span></div>
+            </div>
+            <!-- Вопрос -->
+            <div class="col col-que">
+                <div class="col-header"><i class="fas fa-question-circle"></i> Вопрос</div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b><span style="color:#3a76b9;">Am</span> I
+                        right?</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b><span style="color:#3a76b9;">Is</span>
+                        she tired?</b></div>
+                <div class="example-line"><i class="fas fa-arrow-right"></i> <b><span style="color:#3a76b9;">Are</span>
+                        they ready?</b></div>
+                <div style="margin-top: 25px;"><span class="badge">Am/Is/Are + подлежащее?</span></div>
+            </div>
+        </div>
+
+        <!-- Краткие ответы (вынесены отдельно, но связаны с вопросами) -->
+        <div style="padding: 0 30px;">
+            <div class="short-answers">
+                <h3><i class="fas fa-reply-all"></i> Краткие ответы</h3>
+                <div class="short-grid">
+                    <div class="short-item"><i class="fas fa-check-circle" style="color:#12805c;"></i> Yes, I <b>am</b>.
+                    </div>
+                    <div class="short-item"><i class="fas fa-xmark-circle" style="color:#b13e3e;"></i> No, I’m
+                        <b>not</b>.</div>
+                    <div class="short-item"><i class="fas fa-check-circle" style="color:#12805c;"></i> Yes, he
+                        <b>is</b>.</div>
+                    <div class="short-item"><i class="fas fa-xmark-circle" style="color:#b13e3e;"></i> No, he
+                        <b>isn’t</b>.</div>
+                    <div class="short-item"><i class="fas fa-check-circle" style="color:#12805c;"></i> Yes, they
+                        <b>are</b>.</div>
+                    <div class="short-item"><i class="fas fa-xmark-circle" style="color:#b13e3e;"></i> No, they
+                        <b>aren’t</b>.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Таблица всех форм I am / he is / ... -->
+        <div class="forms-panel">
+            <h2><i class="fas fa-table"></i> Полная таблица спряжения</h2>
+            <div class="forms-table">
+                <div class="form-card">
+                    <div class="pronoun">I</div>
+                    <div class="verb-form">am</div>
+                    <div class="example-small">I am a teacher.</div>
+                    <div class="example-small" style="margin-top:8px;">❌ I am not</div>
+                </div>
+                <div class="form-card">
+                    <div class="pronoun">He / She / It</div>
+                    <div class="verb-form">is</div>
+                    <div class="example-small">She is happy.</div>
+                    <div class="example-small" style="margin-top:8px;">❌ isn't</div>
+                </div>
+                <div class="form-card">
+                    <div class="pronoun">You / We / They</div>
+                    <div class="verb-form">are</div>
+                    <div class="example-small">We are friends.</div>
+                    <div class="example-small" style="margin-top:8px;">❌ aren't</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Сокращенные формы (isn't / aren't / I'm etc) -->
+        <div class="contractions">
+            <h3 style="display: flex; gap: 20px; align-items: center;"><i class="fas fa-link"></i> Распространённые
+                сокращения</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px 40px;">
+                <div><span style="font-weight:800;">I am</span> → I’m</div>
+                <div><span style="font-weight:800;">he is</span> → he’s</div>
+                <div><span style="font-weight:800;">she is</span> → she’s</div>
+                <div><span style="font-weight:800;">it is</span> → it’s</div>
+                <div><span style="font-weight:800;">you are</span> → you’re</div>
+                <div><span style="font-weight:800;">we are</span> → we’re</div>
+                <div><span style="font-weight:800;">they are</span> → they’re</div>
+                <div><span style="font-weight:800; color:#ad3a3a;">is not</span> → isn’t</div>
+                <div><span style="font-weight:800; color:#ad3a3a;">are not</span> → aren’t</div>
+            </div>
+        </div>
+
+        <!-- Дополнительные примеры в линию (отрицание и вопрос) -->
+        <div class="extra-strip">
+            <div class="neg-box">
+                <h3><i class="fas fa-ban" style="color:#b13e3e;"></i> Отрицание (полные формы)</h3>
+                <p><b>I am not</b> · He is not · She is not · It is not</p>
+                <p><b>You are not</b> · We are not · They are not</p>
+            </div>
+            <div class="ques-box">
+                <h3><i class="fas fa-question" style="color:#2a5f9c;"></i> Вопросы</h3>
+                <p><b>Am I?</b> · Is he/she/it? · Are you/we/they?</p>
+                <p><i class="fas fa-lightbulb"></i> Am I late? Is he your brother? Are they at home?</p>
+            </div>
+        </div>
+
+        <!-- footer шпаргалка -->
+        <div
+            style="background: #f8d35f; padding: 20px 35px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; border-top: 6px solid #b39030;">
+            <div style="font-weight:800; font-size:1.6rem; color:#1a2e44;">💡 to be = быть, находиться, являться</div>
+            <div style="display: flex; gap: 8px;">
+                <span style="background:#1e3a5f; color:white; border-radius:40px; padding:10px 25px;">am</span>
+                <span style="background:#1e3a5f; color:white; border-radius:40px; padding:10px 25px;">is</span>
+                <span style="background:#1e3a5f; color:white; border-radius:40px; padding:10px 25px;">are</span>
+            </div>
+        </div>
+
+        <!-- маленькая памятка по порядку слов -->
+        <div
+            style="display: grid; grid-template-columns: repeat(3,1fr); background: #bcd3ec; padding: 15px 30px; gap: 10px; font-weight:500;">
+            <div>✓ I <b>am</b> happy.</div>
+            <div>✗ I <b>am not</b> sad.</div>
+            <div>? <b>Am</b> I happy?</div>
+            <div>✓ She <b>is</b> a doctor.</div>
+            <div>✗ She <b>isn't</b> a doctor.</div>
+            <div>? <b>Is</b> she a doctor?</div>
+        </div>
+    </div>
+</body>
+
+</html>

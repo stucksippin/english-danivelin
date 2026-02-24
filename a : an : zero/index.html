@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика: Артикли a/an и Zero Conditional (нулевой артикль)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+            line-height: 1.5;
+            color: #1e2b37;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #0b3954;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 8px solid #ffb74d;
+            padding-left: 25px;
+            background: linear-gradient(to right, #ffffffd0, transparent);
+            border-radius: 0 40px 40px 0;
+        }
+
+        h1 span {
+            background: #0b3954;
+            color: white;
+            font-size: 1.2rem;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            color: #0b3954;
+            border-bottom: 4px solid;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        .section-a {
+            border-bottom-color: #2e7d32;
+        }
+
+        .section-zero {
+            border-bottom-color: #b85e00;
+        }
+
+        .section-compare {
+            border-bottom-color: #5e35b1;
+        }
+
+        .section-errors {
+            border-bottom-color: #c62828;
+        }
+
+        .grid-2,
+        .grid-3 {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 25px;
+            box-shadow: 0 15px 30px -12px rgba(0, 20, 30, 0.15);
+            transition: transform 0.1s ease, box-shadow 0.2s;
+            border: 1px solid #ffffff70;
+            backdrop-filter: blur(2px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -15px #0b395480;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .card-header .emoji-badge {
+            font-size: 2.2rem;
+            background: #eef2f6;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dee5ed;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            color: #1e3b4c;
+            margin-bottom: 12px;
+        }
+
+        .rule-item {
+            background: #f0f5fa;
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 16px;
+            border-left: 6px solid;
+        }
+
+        .rule-item.a-good {
+            border-left-color: #2e7d32;
+        }
+
+        .rule-item.a-sound {
+            border-left-color: #ed6a02;
+        }
+
+        .rule-item.a-no {
+            border-left-color: #b33e3e;
+        }
+
+        .rule-item.zero-use {
+            border-left-color: #b85e00;
+        }
+
+        .rule-item.zero-place {
+            border-left-color: #0f5c7a;
+        }
+
+        .rule-item.compare {
+            border-left-color: #5e35b1;
+        }
+
+        .rule-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rule-item ul,
+        .rule-item .examples {
+            margin-left: 20px;
+            color: #2d3f4e;
+            list-style-type: none;
+        }
+
+        .rule-item li {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .example-highlight {
+            background: #fff7e0;
+            border-radius: 20px;
+            padding: 16px 20px;
+            font-weight: 500;
+            border: 1px dashed #ffb85c;
+        }
+
+        .example-highlight code {
+            background: #ffeec2;
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            color: #a34100;
+            font-weight: 600;
+        }
+
+        .comparison-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            background: #e9eef3;
+            border-radius: 40px;
+            padding: 18px 22px;
+        }
+
+        .comparison-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .green-tag,
+        .orange-tag {
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-right: 15px;
+        }
+
+        .green-tag {
+            color: #1f7042;
+        }
+
+        .orange-tag {
+            color: #c95f0f;
+        }
+
+        .mistake-card {
+            background: #ffefed;
+            border-radius: 28px;
+            padding: 18px;
+            border: 1px solid #ffb7b0;
+        }
+
+        .mistake-card del {
+            color: #b71c1c;
+            background: #ffd9d9;
+            padding: 3px 8px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .mistake-card ins {
+            color: #1b5e20;
+            background: #dcf2dc;
+            padding: 3px 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .footer-note {
+            margin-top: 50px;
+            background: #dde9f5;
+            border-radius: 60px;
+            padding: 28px 35px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #09435c;
+            border: 3px solid white;
+            box-shadow: inset 0 -3px 0 #b6ccda;
+        }
+
+        .footer-note span {
+            background: #0b3954;
+            color: white;
+            padding: 10px 28px;
+            border-radius: 40px;
+            margin: 0 10px;
+            font-size: 1.6rem;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: linear-gradient(90deg, #c6dae8, #a1c0d6, #c6dae8);
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .card-header {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            📘 Артикли a / an и нулевой артикль (zero)
+            <span>шпаргалка</span>
+        </h1>
+
+        <!-- 1. А / AN -->
+        <h2 class="section-a">🔹 1. Неопределённый артикль A / AN</h2>
+        <div class="grid-2">
+            <!-- Когда используется a/an -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="emoji-badge">🆕</div>
+                    <span>1.1 Когда используем</span>
+                </div>
+                <div class="rule-item a-good">
+                    <p>📌 Предмет впервые / не знаем какой именно</p>
+                    <ul>
+                        <li>• I saw <strong>a</strong> dog. (какую-то собаку)</li>
+                        <li>• She bought <strong>a</strong> dress.</li>
+                        <li>• He wants to be <strong>a</strong> doctor.</li>
+                    </ul>
+                </div>
+                <div class="rule-item a-good">
+                    <p>👩‍⚕️ Профессия после <em>be, become, work as</em></p>
+                    <ul>
+                        <li>• She is <strong>a</strong> teacher.</li>
+                        <li>• He became <strong>a</strong> pilot.</li>
+                        <li>• I work as <strong>an</strong> engineer.</li>
+                    </ul>
+                    <div class="badge">В английском перед профессией почти всегда a/an!</div>
+                </div>
+                <div class="rule-item a-good">
+                    <p>✨ Как один из многих / с описанием</p>
+                    <ul>
+                        <li>• This is <strong>a</strong> good book.</li>
+                        <li>• It’s <strong>a</strong> big problem.</li>
+                        <li>• That’s <strong>an</strong> interesting idea.</li>
+                    </ul>
+                </div>
+                <div class="rule-item a-good">
+                    <p>🔢 В значении «один»</p>
+                    <ul>
+                        <li>• I’ll be back in <strong>a</strong> minute (= one)</li>
+                        <li>• twice <strong>a</strong> day · $50 <strong>a</strong> kilo</li>
+                    </ul>
+                </div>
+                <div class="rule-item a-good">
+                    <p>⚡ Устойчивые выражения</p>
+                    <ul>
+                        <li>have <strong>a</strong> shower / take <strong>a</strong> break</li>
+                        <li>go for <strong>a</strong> walk / have <strong>a</strong> look</li>
+                        <li>have <strong>a</strong> good time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Разница a и an + когда нельзя -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="emoji-badge">🔊</div>
+                    <span>1.2 A vs AN (звуки!)</span>
+                </div>
+                <div class="rule-item a-sound">
+                    <p>👄 A — перед согласным <em>звуком</em></p>
+                    <ul>
+                        <li>a dog · a house</li>
+                        <li><strong>a university</strong> (juː) · <strong>a European</strong> (jʊər)</li>
+                    </ul>
+                </div>
+                <div class="rule-item a-sound">
+                    <p>🗣️ AN — перед гласным <em>звуком</em></p>
+                    <ul>
+                        <li>an apple · an hour (aʊər — гласный звук)</li>
+                        <li>an engineer · an idea</li>
+                    </ul>
+                </div>
+
+                <div style="margin: 25px 0 5px; font-weight: 700; font-size: 1.3rem;">🚫 1.3 Когда A нельзя</div>
+                <div class="rule-item a-no">
+                    <p>❌ Множественное число</p>
+                    <ul>
+                        <li><span style="background:#ffc1c1; padding:2px 8px; border-radius:20px;">a dogs</span> → dogs
+                        </li>
+                        <li><span style="background:#ffc1c1; padding:2px 8px; border-radius:20px;">a books</span> →
+                            books</li>
+                    </ul>
+                </div>
+                <div class="rule-item a-no">
+                    <p>🥛 Неисчисляемые существительные</p>
+                    <ul>
+                        <li><span style="background:#ffc1c1;">a water, a milk, a information, a money</span> ❌</li>
+                        <li>✓ water / some water / a bottle of water</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. НУЛЕВОЙ АРТИКЛЬ (ZERO) -->
+        <h2 class="section-zero">🔹 2. Нулевой артикль (Zero Article) — артикля нет</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">🧩</span>2.1 Множественное число</div>
+                <div class="rule-item zero-use">
+                    <p>🐕 Dogs are friendly. (собаки вообще)</p>
+                    <p>📚 Books are expensive.</p>
+                    <p>👩‍🏫 Teachers work hard.</p>
+                    <p class="badge">Говорим обо всех в целом</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">💧</span>2.2 Неисчисляемые (общий смысл)</div>
+                <div class="rule-item zero-use">
+                    <p>💧 Water is important.</p>
+                    <p>🥛 Milk is good for you.</p>
+                    <p>ℹ️ Information is useful.</p>
+                    <p>💰 Money can’t buy happiness.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">🌍</span>2.3 Названия</div>
+                <div class="rule-item zero-use">
+                    <p><strong>Стран</strong> (большинство): Russia, France, China, Germany</p>
+                    <p class="badge">⚠️ Исключения: the USA, the UK, the Netherlands</p>
+                    <p><strong>Городов:</strong> Moscow, Paris, London</p>
+                    <p><strong>Языков:</strong> English, Spanish. She speaks French.</p>
+                    <p><strong>Школьные предметы:</strong> Maths, History, Physics</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">🏫</span>2.4 Функция места</div>
+                <div class="rule-item zero-place">
+                    <p>🚸 go to school / be at school (учиться)</p>
+                    <p>💼 go to work / be at home</p>
+                    <p>🛏️ go to bed · ⛓️ in prison</p>
+                    <p>⛪ go to church (как верующий)</p>
+                    <p class="badge">НО: go to the school (в здание), the hospital (конкретное)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">🍽️</span>2.5 Приёмы пищи</div>
+                <div class="rule-item zero-place">
+                    <p>🍳 have breakfast · 🥗 have lunch · 🍽️ have dinner</p>
+                    <p class="badge">НО: We had a big dinner yesterday (конкретный)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="emoji-badge">🧾</span>2.6 После некоторых слов</div>
+                <div class="rule-item zero-use">
+                    <p>at home, at work, in town</p>
+                    <p>by car / on foot и др.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 3. СРАВНЕНИЕ A vs ZERO -->
+        <h2 class="section-compare">🔸 3. A / AN против нулевого: наглядные блоки</h2>
+        <div class="grid-2">
+            <div class="card">
+                <div class="comparison-row">
+                    <div class="comparison-item"><span class="green-tag">A</span> I saw <strong>a cat</strong>.</div>
+                    <div class="comparison-item"><span class="orange-tag">ZERO</span> <strong>Cats</strong> are cute.
+                    </div>
+                </div>
+                <p>✔️ один, неопределённый — ✔️ в целом, все кошки</p>
+            </div>
+            <div class="card">
+                <div class="comparison-row">
+                    <div class="comparison-item"><span class="green-tag">A</span> She bought <strong>a car</strong>.
+                    </div>
+                    <div class="comparison-item"><span class="orange-tag">ZERO</span> <strong>Cars</strong> are
+                        expensive.</div>
+                </div>
+                <p>✔️ один предмет — ✔️ множ. число (вообще)</p>
+            </div>
+            <div class="card">
+                <div class="comparison-row">
+                    <div class="comparison-item"><span class="green-tag">A</span> <strong>a book</strong> (исчисл. ед.ч)
+                    </div>
+                    <div class="comparison-item"><span class="orange-tag">ZERO</span> <strong>milk, sugar, advice,
+                            furniture</strong></div>
+                </div>
+                <p>✔️ исчисляемое ед.ч — ✔️ неисчисляемые</p>
+            </div>
+        </div>
+
+        <!-- 4. ЧАСТЫЕ ОШИБКИ -->
+        <h2 class="section-errors">⚠️ 4. Ошибки учеников (правильно/неправильно)</h2>
+        <div class="grid-2">
+            <div class="mistake-card">
+                <p><del>She is teacher</del> → <ins>She is a teacher</ins></p>
+            </div>
+            <div class="mistake-card">
+                <p><del>I bought new phone</del> → <ins>I bought a new phone</ins></p>
+            </div>
+            <div class="mistake-card">
+                <p><del>I like a music</del> → <ins>I like music</ins></p>
+            </div>
+            <div class="mistake-card">
+                <p><del>A dogs are smart</del> → <ins>Dogs are smart</ins></p>
+            </div>
+            <div class="mistake-card">
+                <p><del>I need a information</del> → <ins>I need information</ins></p>
+            </div>
+            <div class="mistake-card">
+                <p><del>He is engineer</del> → <ins>He is an engineer</ins></p>
+            </div>
+        </div>
+
+        <!-- 5. Простое объяснение  -->
+        <div class="footer-note">
+            ✨ <span>A = один, какой-то</span> vs <span>ZERO = вообще, в целом</span> ✨
+        </div>
+        <div
+            style="background: white; border-radius: 50px; padding: 25px; margin-top: 30px; text-align: center; font-size: 1.2rem; box-shadow: 0 10px 20px #c5d5e2;">
+            💡 <strong>I want a dog.</strong> (одну собаку) — <strong>I like dogs.</strong> (собак вообще)
+        </div>
+
+        <!-- дополнительный блок: короткие правила a/an по звукам + шкала -->
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0; justify-content: center;">
+            <div
+                style="background: #e4f0fa; border-radius: 50px; padding: 18px 30px; font-size: 1.2rem; border: 2px solid white;">
+                🔊 <strong>a</strong> university, <strong>a</strong> one-way street (звук 'w')
+            </div>
+            <div
+                style="background: #fff1dd; border-radius: 50px; padding: 18px 30px; font-size: 1.2rem; border: 2px solid white;">
+                🗣️ <strong>an</strong> hour, <strong>an</strong> MBA (em bi ei — гласный звук)
+            </div>
+        </div>
+
+        <!-- footer с напоминанием про исключения -->
+        <div style="border-top: 3px dotted #3f6c8a; padding: 30px 0 10px; text-align: center; color: #1d4f6e;">
+            ⭐ артикль a/an = только с исчисляемыми в единственном числе · zero = plural / uncountable / общие смыслы ⭐
+        </div>
+    </div>
+</body>
+
+</html>
