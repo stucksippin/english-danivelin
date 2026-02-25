@@ -6,9 +6,10 @@
         {
             label: 'Основы',
             items: [
-                { icon: '🔤', name: 'Артикли', sub: 'a/an, the, zero', href: 'topics/articles.html', active: false },
-                { icon: '👤', name: 'Местоимения', sub: 'pronouns', href: 'topics/pronouns.html', active: false },
-                { icon: '🔵', name: 'To Be', sub: 'Present Simple', href: 'topics/to-be.html', active: false },
+                { icon: '🔤', name: 'Артикли', sub: 'a/an, the, zero', href: 'topics/articles.html' },
+                { icon: '👤', name: 'Местоимения', sub: 'pronouns', href: 'topics/pronouns.html' },
+                { icon: '🔵', name: 'To Be', sub: 'Present Simple', href: 'topics/to-be.html' },
+                { icon: '📊', name: 'Степени сравнения', sub: 'comparatives & superlatives', href: 'topics/adjectives-comparison.html' },
             ]
         },
         {
@@ -22,8 +23,8 @@
         {
             label: 'Синтаксис',
             items: [
-                { icon: '🔀', name: 'Word Order', sub: 'порядок слов', href: '#', locked: true },
-                { icon: '❓', name: 'Questions', sub: 'вопросительные', href: '#', locked: true },
+                { icon: '🔀', name: 'Word Order', sub: 'порядок слов', href: 'topics/word-order.html' },
+                { icon: '❓', name: 'Questions', sub: 'вопросительные', href: 'topics/questions.html' },
             ]
         }
     ];

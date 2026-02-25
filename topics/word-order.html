@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Order — English Grammar Book</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .sentence-diagram {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        .sd-block {
+            border-radius: var(--r-md);
+            padding: 10px 18px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .sd-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            opacity: 0.75;
+        }
+
+        .sd-word {
+            font-size: 1rem;
+        }
+
+        .sdb-s {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .sdb-v {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .sdb-o {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .sdb-p {
+            background: #EDE9FE;
+            color: #4C1D95;
+        }
+
+        .sdb-a {
+            background: #FFE4E6;
+            color: #9F1239;
+        }
+
+        .sdb-t {
+            background: #E0F2FE;
+            color: #0C4A6E;
+        }
+
+        .sdb-m {
+            background: #F3E8FF;
+            color: #6B21A8;
+        }
+
+        .sd-plus {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            padding: 0 2px;
+        }
+
+        .sd-arrow {
+            font-size: 1.3rem;
+            color: var(--blue);
+            margin: 0 8px;
+        }
+
+        .word-order-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .wo-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .adverb-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--r-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .adverb-table thead tr {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .adverb-table thead th {
+            padding: 12px 18px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .adverb-table tbody tr {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            transition: background 0.15s;
+        }
+
+        .adverb-table tbody tr:hover {
+            background: var(--surface-2);
+        }
+
+        .adverb-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .adverb-table td {
+            padding: 12px 18px;
+            font-size: 0.92rem;
+        }
+
+        .adverb-table .adv-type {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .adverb-table .adv-pos {
+            color: var(--purple);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .adverb-table .adv-ex {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main">
+
+            <header class="page-header">
+                <a href="../index.html" class="back-link">← Все темы</a>
+                <div class="page-header-eyebrow">🔀 Синтаксис</div>
+                <h1>Word Order</h1>
+                <p class="header-sub">Порядок слов в английском предложении — строгие правила и нюансы</p>
+            </header>
+
+            <div class="content">
+
+                <!-- Базовая схема -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">🏗️</span>
+                    Базовая схема: S – V – O
+                </h2>
+
+                <div class="card" style="margin-bottom:24px">
+                    <div class="card-title">Утвердительное предложение</div>
+                    <div class="sentence-diagram">
+                        <div class="sd-block sdb-s">
+                            <div class="sd-label">Subject</div>
+                            <div class="sd-word">She</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-v">
+                            <div class="sd-label">Verb</div>
+                            <div class="sd-word">reads</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-o">
+                            <div class="sd-label">Object</div>
+                            <div class="sd-word">books</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-t">
+                            <div class="sd-label">Time</div>
+                            <div class="sd-word">every day</div>
+                        </div>
+                    </div>
+                    <div class="note note-blue" style="margin-top:4px">
+                        <span class="note-icon">💡</span>
+                        В английском порядок слов <strong>фиксированный</strong> — менять нельзя так свободно, как в
+                        русском.
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-bottom:16px">
+                    <div class="card">
+                        <div class="card-title">✅ Правильно</div>
+                        <div class="example-list">
+                            <div class="ex"><em>She</em> loves <em>coffee</em>.</div>
+                            <div class="ex"><em>They</em> play <em>tennis</em> on weekends.</div>
+                            <div class="ex"><em>He</em> sent <em>a letter</em> to his friend.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">❌ Типичные ошибки русскоязычных</div>
+                        <div class="example-list">
+                            <div class="ex"><span class="bad">Coffee she loves.</span></div>
+                            <div class="ex"><span class="bad">Tennis on weekends they play.</span></div>
+                            <div class="ex"><span class="bad">To his friend a letter he sent.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- S + V + O + Place + Time -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📍</span>
+                    Место и время: S + V + O + Place + Time
+                </h2>
+
+                <div class="word-order-card">
+                    <div class="wo-title">🗓️ Место идёт до времени</div>
+                    <div class="sentence-diagram">
+                        <div class="sd-block sdb-s">
+                            <div class="sd-label">S</div>
+                            <div class="sd-word">She</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-v">
+                            <div class="sd-label">V</div>
+                            <div class="sd-word">works</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-p">
+                            <div class="sd-label">Place</div>
+                            <div class="sd-word">at home</div>
+                        </div>
+                        <div class="sd-plus">+</div>
+                        <div class="sd-block sdb-t">
+                            <div class="sd-label">Time</div>
+                            <div class="sd-word">every day</div>
+                        </div>
+                    </div>
+                    <div class="example-list" style="margin-top:12px">
+                        <div class="ex">I met him <em>at the park</em> <em>yesterday</em>.</div>
+                        <div class="ex">They eat lunch <em>in the office</em> <em>on Fridays</em>.</div>
+                        <div class="ex">We arrived <em>at the airport</em> <em>at 6 am</em>.</div>
+                    </div>
+                    <div class="mistake-pair" style="margin-top:12px">
+                        <div class="mistake-wrong">She works every day at home.</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">She works at home every day.</div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Прямое и косвенное дополнение -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--amber-light)">🎯</span>
+                    Два дополнения: прямое и косвенное
+                </h2>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Вариант 1 — без предлога: V + кому + что</div>
+                        <div class="sentence-diagram">
+                            <div class="sd-block sdb-v">
+                                <div class="sd-label">V</div>
+                                <div class="sd-word">gave</div>
+                            </div>
+                            <div class="sd-plus">+</div>
+                            <div class="sd-block sdb-a">
+                                <div class="sd-label">кому</div>
+                                <div class="sd-word">him</div>
+                            </div>
+                            <div class="sd-plus">+</div>
+                            <div class="sd-block sdb-o">
+                                <div class="sd-label">что</div>
+                                <div class="sd-word">a book</div>
+                            </div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex">She gave <em>him</em> <em>a book</em>.</div>
+                            <div class="ex">I sent <em>her</em> <em>a message</em>.</div>
+                            <div class="ex">He bought <em>me</em> <em>a coffee</em>.</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Вариант 2 — с предлогом to/for: V + что + to + кому</div>
+                        <div class="sentence-diagram">
+                            <div class="sd-block sdb-v">
+                                <div class="sd-label">V</div>
+                                <div class="sd-word">gave</div>
+                            </div>
+                            <div class="sd-plus">+</div>
+                            <div class="sd-block sdb-o">
+                                <div class="sd-label">что</div>
+                                <div class="sd-word">a book</div>
+                            </div>
+                            <div class="sd-plus">+</div>
+                            <div class="sd-block sdb-a">
+                                <div class="sd-label">to</div>
+                                <div class="sd-word">to him</div>
+                            </div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex">She gave <em>a book</em> <em>to him</em>.</div>
+                            <div class="ex">I sent <em>a message</em> <em>to her</em>.</div>
+                            <div class="ex">He bought <em>a coffee</em> <em>for me</em>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Наречия частотности -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--purple-light)">🔁</span>
+                    Наречия частотности — позиция в предложении
+                </h2>
+
+                <div class="card" style="padding:0; overflow:hidden; margin-bottom:20px">
+                    <table class="adverb-table">
+                        <thead>
+                            <tr>
+                                <th>Наречие</th>
+                                <th>Значение</th>
+                                <th>Позиция</th>
+                                <th>Пример</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="adv-type">always</td>
+                                <td style="color:var(--text-muted)">всегда</td>
+                                <td class="adv-pos">перед гл. / после be</td>
+                                <td class="adv-ex">She always drinks coffee. / He is always late.</td>
+                            </tr>
+                            <tr>
+                                <td class="adv-type">usually</td>
+                                <td style="color:var(--text-muted)">обычно</td>
+                                <td class="adv-pos">перед гл. / после be</td>
+                                <td class="adv-ex">I usually wake up at 7.</td>
+                            </tr>
+                            <tr>
+                                <td class="adv-type">often</td>
+                                <td style="color:var(--text-muted)">часто</td>
+                                <td class="adv-pos">перед гл. / после be</td>
+                                <td class="adv-ex">They often go hiking.</td>
+                            </tr>
+                            <tr>
+                                <td class="adv-type">sometimes</td>
+                                <td style="color:var(--text-muted)">иногда</td>
+                                <td class="adv-pos">перед гл. / после be / в начале</td>
+                                <td class="adv-ex">Sometimes I work late.</td>
+                            </tr>
+                            <tr>
+                                <td class="adv-type">rarely / seldom</td>
+                                <td style="color:var(--text-muted)">редко</td>
+                                <td class="adv-pos">перед гл. / после be</td>
+                                <td class="adv-ex">He rarely eats meat.</td>
+                            </tr>
+                            <tr>
+                                <td class="adv-type">never</td>
+                                <td style="color:var(--text-muted)">никогда</td>
+                                <td class="adv-pos">перед гл. / после be</td>
+                                <td class="adv-ex">She never drinks alcohol.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">✅ С обычным глаголом — перед ним</div>
+                        <div class="example-list">
+                            <div class="ex">I <em>always</em> read before bed.</div>
+                            <div class="ex">She <em>never</em> eats fast food.</div>
+                            <div class="ex">They <em>often</em> travel abroad.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">✅ С глаголом be — после него</div>
+                        <div class="example-list">
+                            <div class="ex">He is <em>always</em> on time.</div>
+                            <div class="ex">She is <em>never</em> late.</div>
+                            <div class="ex">They are <em>usually</em> tired.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Прилагательные перед существительным -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--green-light)">🎨</span>
+                    Порядок прилагательных перед noun
+                </h2>
+
+                <div class="card" style="margin-bottom:20px">
+                    <div class="card-title">Несколько прилагательных — строгий порядок</div>
+                    <div class="sentence-diagram" style="flex-wrap:wrap">
+                        <div class="sd-block sdb-a" style="font-size:0.8rem">
+                            <div class="sd-label">Opinion</div>
+                            <div class="sd-word">beautiful</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-s" style="font-size:0.8rem">
+                            <div class="sd-label">Size</div>
+                            <div class="sd-word">small</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-v" style="font-size:0.8rem">
+                            <div class="sd-label">Age</div>
+                            <div class="sd-word">old</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-m" style="font-size:0.8rem">
+                            <div class="sd-label">Shape</div>
+                            <div class="sd-word">round</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-p" style="font-size:0.8rem">
+                            <div class="sd-label">Colour</div>
+                            <div class="sd-word">red</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-t" style="font-size:0.8rem">
+                            <div class="sd-label">Origin</div>
+                            <div class="sd-word">Italian</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block sdb-o" style="font-size:0.8rem">
+                            <div class="sd-label">Material</div>
+                            <div class="sd-word">wooden</div>
+                        </div>
+                        <div class="sd-plus">→</div>
+                        <div class="sd-block" style="background:var(--navy);color:#fff;font-size:0.8rem">
+                            <div class="sd-label">Noun</div>
+                            <div class="sd-word">table</div>
+                        </div>
+                    </div>
+                    <div class="note note-amber" style="margin-top:16px">
+                        <span class="note-icon">⚠️</span>
+                        На практике больше 2–3 прилагательных редко используют. Но порядок — всегда такой.
+                    </div>
+                    <div class="example-list" style="margin-top:14px">
+                        <div class="ex">a <em>beautiful small old</em> house</div>
+                        <div class="ex">a <em>big red</em> car</div>
+                        <div class="ex">a <em>lovely little</em> Italian <em>leather</em> bag</div>
+                    </div>
+                    <div class="mistake-pair" style="margin-top:12px">
+                        <div class="mistake-wrong">an Italian lovely leather little bag</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">a lovely little Italian leather bag</div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="formula-box">
+                    <h3>📌 Краткая формула</h3>
+                    <div class="formula-tags">
+                        <span class="formula-tag">S + V + O (фиксировано)</span>
+                        <span class="formula-tag">Place перед Time</span>
+                        <span class="formula-tag">наречие перед глаголом</span>
+                        <span class="formula-tag">наречие после be</span>
+                        <span class="formula-tag">Opinion → Size → Age → Colour → Origin → Material</span>
+                        <span class="formula-tag">кому + что или что + to/for + кому</span>
+                    </div>
+                    <div
+                        style="margin-top:24px; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:var(--r-md); font-size:1rem; color:rgba(255,255,255,0.8)">
+                        💡 <strong style="color:#fff">She always reads at home in the evening.</strong> &nbsp;·&nbsp;
+                        <strong style="color:#fff">He gave me a beautiful old Italian book.</strong>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/nav.js"></script>
+</body>
+
+</html>

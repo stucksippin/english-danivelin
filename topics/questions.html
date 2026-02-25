@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions — English Grammar Book</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .question-type-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+
+        .qt-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .qt-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--r-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .qt-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .qt-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .formula-line {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+            background: var(--surface-2);
+            border-radius: var(--r-md);
+            padding: 14px 18px;
+            margin-bottom: 16px;
+        }
+
+        .fl-block {
+            padding: 6px 14px;
+            border-radius: var(--r-pill);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .fl-aux {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .fl-sub {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .fl-verb {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .fl-obj {
+            background: #EDE9FE;
+            color: #4C1D95;
+        }
+
+        .fl-wh {
+            background: #FFE4E6;
+            color: #9F1239;
+        }
+
+        .fl-sep {
+            color: var(--text-muted);
+            font-size: 1rem;
+            padding: 0 2px;
+        }
+
+        .wh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .wh-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 16px;
+            transition: all 0.2s var(--ease);
+        }
+
+        .wh-card:hover {
+            border-color: var(--blue);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .wh-word {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .wh-ru {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .wh-ex {
+            font-size: 0.87rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .tag-question-diagram {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--surface-2);
+            border-radius: var(--r-md);
+            padding: 16px 20px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .tqd-main {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
+        .tqd-comma {
+            color: var(--text-muted);
+        }
+
+        .tqd-tag {
+            font-weight: 700;
+            color: var(--blue-dark);
+            background: var(--blue-light);
+            padding: 4px 12px;
+            border-radius: var(--r-pill);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main">
+
+            <header class="page-header">
+                <a href="../index.html" class="back-link">← Все темы</a>
+                <div class="page-header-eyebrow">❓ Синтаксис</div>
+                <h1>Questions</h1>
+                <p class="header-sub">Четыре типа вопросов в английском — структура и примеры</p>
+            </header>
+
+            <div class="content">
+
+                <!-- Обзор типов -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📋</span>
+                    Четыре типа вопросов
+                </h2>
+
+                <div class="grid-2" style="margin-bottom:32px">
+                    <div class="card">
+                        <div class="card-title" style="color:var(--blue-dark)">1. General (Yes/No)</div>
+                        <div class="rule rule-blue">
+                            <div class="rule-label">Ответ: Yes или No</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">Do you like coffee?</div>
+                                    <div class="ex">Is she at home?</div>
+                                    <div class="ex">Can he swim?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--red)">2. Special (Wh-)</div>
+                        <div class="rule rule-red">
+                            <div class="rule-label">Ответ: конкретная информация</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">Where do you live?</div>
+                                    <div class="ex">What time is it?</div>
+                                    <div class="ex">Why are you late?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--green)">3. Alternative (Or)</div>
+                        <div class="rule rule-green">
+                            <div class="rule-label">Ответ: выбор из вариантов</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">Do you prefer tea or coffee?</div>
+                                    <div class="ex">Is she Russian or French?</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color:var(--purple)">4. Tag Question</div>
+                        <div class="rule rule-purple">
+                            <div class="rule-label">Хвостовой вопрос — уточнение</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">It's cold today, <em>isn't it?</em></div>
+                                    <div class="ex">She doesn't smoke, <em>does she?</em></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- 1. General Question -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">1️⃣</span>
+                    General Question (Yes/No)
+                </h2>
+
+                <div class="question-type-card">
+                    <div class="qt-header">
+                        <div class="qt-badge" style="background:var(--blue-light)">🔵</div>
+                        <div>
+                            <div class="qt-title">Aux + Subject + Verb + Object?</div>
+                            <div class="qt-sub">Вспомогательный глагол выходит на первое место</div>
+                        </div>
+                    </div>
+
+                    <div class="formula-line">
+                        <span class="fl-block fl-aux">Do / Does / Did</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-sub">Subject</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-verb">Verb</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-obj">Object</span>
+                        <span class="fl-sep">?</span>
+                    </div>
+
+                    <div class="grid-2">
+                        <div>
+                            <div class="card-title" style="margin-bottom:10px">Present Simple</div>
+                            <div class="example-list">
+                                <div class="ex"><em>Do</em> you like pizza?</div>
+                                <div class="ex"><em>Does</em> she work here?</div>
+                                <div class="ex"><em>Do</em> they speak English?</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-title" style="margin-bottom:10px">To Be / Modal</div>
+                            <div class="example-list">
+                                <div class="ex"><em>Is</em> he at home? — Yes, he <em>is</em>.</div>
+                                <div class="ex"><em>Are</em> they ready? — No, they <em>aren't</em>.</div>
+                                <div class="ex"><em>Can</em> you help me?</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="note note-amber" style="margin-top:16px">
+                        <span class="note-icon">⚠️</span>
+                        После <strong>does</strong> глагол без -s: Does she <em>work</em>? (не works). После
+                        <strong>did</strong> инфинитив: Did you <em>see</em>? (не saw).
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- 2. Special (Wh-) -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--red-light)">2️⃣</span>
+                    Special Question (Wh-)
+                </h2>
+
+                <div class="question-type-card">
+                    <div class="qt-header">
+                        <div class="qt-badge" style="background:var(--red-light)">❓</div>
+                        <div>
+                            <div class="qt-title">Wh- + Aux + Subject + Verb?</div>
+                            <div class="qt-sub">Вопросительное слово + порядок General Question</div>
+                        </div>
+                    </div>
+
+                    <div class="formula-line">
+                        <span class="fl-block fl-wh">Wh-word</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-aux">do/does/is/are</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-sub">Subject</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-verb">Verb</span>
+                        <span class="fl-sep">?</span>
+                    </div>
+
+                    <div class="example-list" style="margin-bottom:20px">
+                        <div class="ex"><em>Where</em> do you live?</div>
+                        <div class="ex"><em>What</em> does she do?</div>
+                        <div class="ex"><em>Why</em> are you crying?</div>
+                        <div class="ex"><em>How</em> do they travel?</div>
+                        <div class="ex"><em>When</em> did you arrive?</div>
+                    </div>
+
+                    <div class="card-title" style="margin-bottom:16px">Вопросительные слова</div>
+                    <div class="wh-grid">
+                        <div class="wh-card">
+                            <div class="wh-word">What</div>
+                            <div class="wh-ru">Что / Какой</div>
+                            <div class="wh-ex">What is your name?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">Where</div>
+                            <div class="wh-ru">Где / Куда</div>
+                            <div class="wh-ex">Where do you live?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">When</div>
+                            <div class="wh-ru">Когда</div>
+                            <div class="wh-ex">When does it start?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">Who</div>
+                            <div class="wh-ru">Кто / Кого</div>
+                            <div class="wh-ex">Who called you?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">Why</div>
+                            <div class="wh-ru">Почему</div>
+                            <div class="wh-ex">Why are you late?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">How</div>
+                            <div class="wh-ru">Как</div>
+                            <div class="wh-ex">How are you?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">Which</div>
+                            <div class="wh-ru">Который (из)</div>
+                            <div class="wh-ex">Which one do you want?</div>
+                        </div>
+                        <div class="wh-card">
+                            <div class="wh-word">Whose</div>
+                            <div class="wh-ru">Чей</div>
+                            <div class="wh-ex">Whose bag is this?</div>
+                        </div>
+                    </div>
+
+                    <div class="card-title" style="margin:20px 0 12px">How + прилагательное</div>
+                    <div class="grid-2">
+                        <div class="example-list">
+                            <div class="ex"><em>How old</em> are you? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Сколько лет?</span></div>
+                            <div class="ex"><em>How long</em> does it take? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Сколько времени?</span></div>
+                            <div class="ex"><em>How far</em> is the station? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Как далеко?</span></div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex"><em>How much</em> does it cost? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Сколько стоит?</span></div>
+                            <div class="ex"><em>How many</em> people are there? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Сколько?</span></div>
+                            <div class="ex"><em>How often</em> do you go? <span
+                                    style="color:var(--text-muted);font-size:.85em">— Как часто?</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- 3. Subject Question -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--amber-light)">⚡</span>
+                    Subject Question — особый случай
+                </h2>
+
+                <div class="question-type-card">
+                    <div class="qt-header">
+                        <div class="qt-badge" style="background:var(--amber-light)">🎯</div>
+                        <div>
+                            <div class="qt-title">Who / What + Verb (без инверсии!)</div>
+                            <div class="qt-sub">Когда вопрос о подлежащем — вспомогательный не нужен</div>
+                        </div>
+                    </div>
+
+                    <div class="formula-line">
+                        <span class="fl-block fl-wh">Who / What</span>
+                        <span class="fl-sep">+</span>
+                        <span class="fl-block fl-verb">Verb (как обычно)</span>
+                        <span class="fl-sep">?</span>
+                    </div>
+
+                    <div class="compare-row">
+                        <div class="compare-side">
+                            <div class="compare-label left">Object question</div>
+                            <div class="compare-text">Who do <strong>you</strong> love?</div>
+                            <div class="compare-note">спрашиваем об объекте — you это субъект</div>
+                        </div>
+                        <div class="compare-vs">vs</div>
+                        <div class="compare-side">
+                            <div class="compare-label right">Subject question</div>
+                            <div class="compare-text">Who loves <strong>you</strong>?</div>
+                            <div class="compare-note">спрашиваем о субъекте — нет инверсии!</div>
+                        </div>
+                    </div>
+
+                    <div class="example-list" style="margin-top:16px">
+                        <div class="ex"><em>Who</em> called? <span style="color:var(--text-muted);font-size:.85em">—
+                                (не: Who did call?)</span></div>
+                        <div class="ex"><em>What</em> happened? <span style="color:var(--text-muted);font-size:.85em">—
+                                (не: What did happen?)</span></div>
+                        <div class="ex"><em>Who</em> broke the window?</div>
+                        <div class="ex"><em>What</em> makes you happy?</div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- 4. Tag Questions -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--purple-light)">4️⃣</span>
+                    Tag Questions — хвостовые вопросы
+                </h2>
+
+                <div class="question-type-card">
+                    <div class="qt-header">
+                        <div class="qt-badge" style="background:var(--purple-light)">🏷️</div>
+                        <div>
+                            <div class="qt-title">Утверждение + отрицательный тег (или наоборот)</div>
+                            <div class="qt-sub">Правило: противоположность. Плюс → минус, минус → плюс</div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div>
+                            <div class="card-title" style="margin-bottom:12px">✅ Положительное + отриц. тег</div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">It's cold</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">isn't it?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">She works here</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">doesn't she?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">They are ready</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">aren't they?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">You can swim</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">can't you?</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card-title" style="margin-bottom:12px">❌ Отрицательное + полож. тег</div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">She doesn't smoke</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">does she?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">They aren't home</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">are they?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">You can't drive</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">can you?</span>
+                            </div>
+                            <div class="tag-question-diagram">
+                                <span class="tqd-main">He didn't call</span>
+                                <span class="tqd-comma">,</span>
+                                <span class="tqd-tag">did he?</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="note note-amber" style="margin-top:16px">
+                        <span class="note-icon">⚠️</span>
+                        <span>I am right, <strong>aren't I?</strong> — единственное исключение. "am I not?" — очень
+                            формально.</span>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Частые ошибки -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--red-light)">⚠️</span>
+                    Частые ошибки
+                </h2>
+
+                <div class="grid-2" style="margin-bottom:32px">
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">Where you live?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">Where do you live?</div>
+                    </div>
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">What she does?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">What does she do?</div>
+                    </div>
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">Does she works here?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">Does she work here?</div>
+                    </div>
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">Who did call?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">Who called?</div>
+                    </div>
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">Did you saw him?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">Did you see him?</div>
+                    </div>
+                    <div class="mistake-pair">
+                        <div class="mistake-wrong">It's nice, isn't he?</div>
+                        <div class="mistake-arrow">→</div>
+                        <div class="mistake-right">It's nice, isn't it?</div>
+                    </div>
+                </div>
+
+                <div class="formula-box">
+                    <h3>📌 Краткая формула</h3>
+                    <div class="formula-tags">
+                        <span class="formula-tag">Yes/No → Aux + S + V?</span>
+                        <span class="formula-tag">Wh- → Wh + Aux + S + V?</span>
+                        <span class="formula-tag">Subject Q → Who/What + V (без инверсии)</span>
+                        <span class="formula-tag">does → глагол без -s</span>
+                        <span class="formula-tag">did → инфинитив</span>
+                        <span class="formula-tag">Tag: + → - / - → +</span>
+                    </div>
+                    <div
+                        style="margin-top:24px; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:var(--r-md); font-size:1rem; color:rgba(255,255,255,0.8)">
+                        💡 <strong style="color:#fff">Does she work here?</strong> &nbsp;·&nbsp; <strong
+                            style="color:#fff">Where do you live?</strong> &nbsp;·&nbsp; <strong style="color:#fff">Who
+                            called?</strong> &nbsp;·&nbsp; <strong style="color:#fff">It's nice, isn't it?</strong>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/nav.js"></script>
+</body>
+
+</html>

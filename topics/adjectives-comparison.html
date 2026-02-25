@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Степени сравнения — English Grammar Book</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .degree-hero {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .degree-pill {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px 24px 20px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .degree-pill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .dp-positive::before {
+            background: var(--blue);
+        }
+
+        .dp-comparative::before {
+            background: var(--green);
+        }
+
+        .dp-superlative::before {
+            background: var(--purple);
+        }
+
+        .dp-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .dp-positive .dp-label {
+            color: var(--blue-dark);
+        }
+
+        .dp-comparative .dp-label {
+            color: var(--green);
+        }
+
+        .dp-superlative .dp-label {
+            color: var(--purple);
+        }
+
+        .dp-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .dp-ru {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .dp-formula {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            background: var(--surface-2);
+            padding: 8px 12px;
+            border-radius: var(--r-sm);
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .dp-example {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .adj-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--r-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .adj-table thead tr {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .adj-table thead th {
+            padding: 13px 18px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .adj-table tbody tr {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            transition: background 0.15s;
+        }
+
+        .adj-table tbody tr:hover {
+            background: var(--surface-2);
+        }
+
+        .adj-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .adj-table td {
+            padding: 13px 18px;
+            font-size: 0.93rem;
+        }
+
+        .adj-table .pos {
+            color: var(--text-secondary);
+        }
+
+        .adj-table .comp {
+            font-weight: 600;
+            color: var(--green);
+            font-family: var(--font-mono);
+        }
+
+        .adj-table .sup {
+            font-weight: 600;
+            color: var(--purple);
+            font-family: var(--font-mono);
+        }
+
+        .adj-table .rule-tag {
+            font-size: 10px;
+            background: var(--blue-light);
+            color: var(--blue-dark);
+            padding: 2px 8px;
+            border-radius: var(--r-pill);
+            font-weight: 700;
+        }
+
+        .scale-bar {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin: 24px 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+        }
+
+        .scale-seg {
+            flex: 1;
+            padding: 20px 24px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .scale-seg:last-child {
+            border-right: none;
+        }
+
+        .scale-seg .ss-word {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .scale-seg .ss-ru {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .scale-seg .ss-ex {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .seg-1 .ss-word {
+            color: var(--blue-dark);
+        }
+
+        .seg-2 .ss-word {
+            color: var(--green);
+        }
+
+        .seg-3 .ss-word {
+            color: var(--purple);
+        }
+
+        .arrow-between {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            padding: 0 4px;
+        }
+
+        @media (max-width: 700px) {
+            .degree-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .scale-bar {
+                flex-direction: column;
+            }
+
+            .scale-seg {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main">
+
+            <header class="page-header">
+                <a href="../index.html" class="back-link">← Все темы</a>
+                <div class="page-header-eyebrow">📊 Basics</div>
+                <h1>Степени сравнения</h1>
+                <p class="header-sub">Positive · Comparative · Superlative — три степени прилагательных</p>
+            </header>
+
+            <div class="content">
+
+                <!-- Три степени — hero -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📐</span>
+                    Три степени сравнения
+                </h2>
+
+                <div class="degree-hero">
+                    <div class="degree-pill dp-positive">
+                        <div class="dp-label">Positive</div>
+                        <div class="dp-name">Положительная</div>
+                        <div class="dp-ru">Просто описываем качество</div>
+                        <div class="dp-formula">adjective</div>
+                        <div class="dp-example">tall · big · interesting</div>
+                    </div>
+                    <div class="degree-pill dp-comparative">
+                        <div class="dp-label">Comparative</div>
+                        <div class="dp-name">Сравнительная</div>
+                        <div class="dp-ru">Сравниваем два предмета</div>
+                        <div class="dp-formula">adj + -er / more + adj</div>
+                        <div class="dp-example">taller · more interesting</div>
+                    </div>
+                    <div class="degree-pill dp-superlative">
+                        <div class="dp-label">Superlative</div>
+                        <div class="dp-name">Превосходная</div>
+                        <div class="dp-ru">Выделяем из всех</div>
+                        <div class="dp-formula">the + adj + -est / the most</div>
+                        <div class="dp-example">the tallest · the most interesting</div>
+                    </div>
+                </div>
+
+                <!-- Шкала наглядно -->
+                <div class="scale-bar">
+                    <div class="scale-seg seg-1">
+                        <div class="ss-word">tall</div>
+                        <div class="ss-ru">положительная</div>
+                        <div class="ss-ex">He is tall.</div>
+                    </div>
+                    <div class="arrow-between">→</div>
+                    <div class="scale-seg seg-2">
+                        <div class="ss-word">taller</div>
+                        <div class="ss-ru">сравнительная</div>
+                        <div class="ss-ex">He is taller than me.</div>
+                    </div>
+                    <div class="arrow-between">→</div>
+                    <div class="scale-seg seg-3">
+                        <div class="ss-word">the tallest</div>
+                        <div class="ss-ru">превосходная</div>
+                        <div class="ss-ex">He is the tallest in class.</div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Правила образования -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--green-light)">📏</span>
+                    Правила образования
+                </h2>
+
+                <div class="grid-2" style="margin-bottom:24px">
+
+                    <div class="card">
+                        <div class="card-title">Короткие прилагательные (1–2 слога)</div>
+
+                        <div class="rule rule-green">
+                            <div class="rule-label">✅ Обычные → прибавляем -er / -est</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">tall → <em>tall-er</em> → <em>the tall-est</em></div>
+                                    <div class="ex">fast → <em>fast-er</em> → <em>the fast-est</em></div>
+                                    <div class="ex">old → <em>old-er</em> → <em>the old-est</em></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rule rule-amber">
+                            <div class="rule-label">⚠️ Оканчиваются на -e → только -r / -st</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">nice → <em>nicer</em> → <em>the nicest</em></div>
+                                    <div class="ex">large → <em>larger</em> → <em>the largest</em></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rule rule-amber">
+                            <div class="rule-label">⚠️ Согл + гласн + согл → удваиваем последнюю</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">big → <em>big<strong>g</strong>er</em> → <em>the
+                                            big<strong>g</strong>est</em></div>
+                                    <div class="ex">hot → <em>hot<strong>t</strong>er</em> → <em>the
+                                            hot<strong>t</strong>est</em></div>
+                                    <div class="ex">thin → <em>thin<strong>n</strong>er</em> → <em>the
+                                            thin<strong>n</strong>est</em></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rule rule-amber">
+                            <div class="rule-label">⚠️ Оканчиваются на -y → меняем на -ier / -iest</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">happy → <em>happier</em> → <em>the happiest</em></div>
+                                    <div class="ex">easy → <em>easier</em> → <em>the easiest</em></div>
+                                    <div class="ex">busy → <em>busier</em> → <em>the busiest</em></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Длинные прилагательные (2+ слога)</div>
+
+                        <div class="rule rule-blue">
+                            <div class="rule-label">✅ more / the most + прилагательное</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">interesting → <em>more interesting</em> → <em>the most
+                                            interesting</em></div>
+                                    <div class="ex">beautiful → <em>more beautiful</em> → <em>the most beautiful</em>
+                                    </div>
+                                    <div class="ex">expensive → <em>more expensive</em> → <em>the most expensive</em>
+                                    </div>
+                                    <div class="ex">difficult → <em>more difficult</em> → <em>the most difficult</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="note note-blue" style="margin-top:16px">
+                            <span class="note-icon">💡</span>
+                            <span>Ориентир: <strong>1 слог</strong> → всегда -er/-est. <strong>3+ слога</strong> →
+                                всегда more/most. <strong>2 слога</strong> — зависит от слова (часто -er, но beautiful →
+                                more beautiful).</span>
+                        </div>
+
+                        <div class="card-title" style="margin-top:24px">🚫 Частые ошибки</div>
+                        <div class="mistake-pair" style="margin-bottom:10px">
+                            <div class="mistake-wrong">more taller</div>
+                            <div class="mistake-arrow">→</div>
+                            <div class="mistake-right">taller (не оба!)</div>
+                        </div>
+                        <div class="mistake-pair" style="margin-bottom:10px">
+                            <div class="mistake-wrong">the most tallest</div>
+                            <div class="mistake-arrow">→</div>
+                            <div class="mistake-right">the tallest</div>
+                        </div>
+                        <div class="mistake-pair">
+                            <div class="mistake-wrong">more interesting-er</div>
+                            <div class="mistake-arrow">→</div>
+                            <div class="mistake-right">more interesting</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Исключения -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--red-light)">⚡</span>
+                    Исключения — нужно запомнить
+                </h2>
+
+                <div class="card" style="padding:0; overflow:hidden; margin-bottom:32px">
+                    <table class="adj-table">
+                        <thead>
+                            <tr>
+                                <th>Positive</th>
+                                <th>Comparative</th>
+                                <th>Superlative</th>
+                                <th>Перевод</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pos">good</td>
+                                <td class="comp">better</td>
+                                <td class="sup">the best</td>
+                                <td style="color:var(--text-muted)">хороший</td>
+                            </tr>
+                            <tr>
+                                <td class="pos">bad</td>
+                                <td class="comp">worse</td>
+                                <td class="sup">the worst</td>
+                                <td style="color:var(--text-muted)">плохой</td>
+                            </tr>
+                            <tr>
+                                <td class="pos">far</td>
+                                <td class="comp">farther / further</td>
+                                <td class="sup">the farthest / furthest</td>
+                                <td style="color:var(--text-muted)">далёкий</td>
+                            </tr>
+                            <tr>
+                                <td class="pos">little</td>
+                                <td class="comp">less</td>
+                                <td class="sup">the least</td>
+                                <td style="color:var(--text-muted)">маленький / мало</td>
+                            </tr>
+                            <tr>
+                                <td class="pos">much / many</td>
+                                <td class="comp">more</td>
+                                <td class="sup">the most</td>
+                                <td style="color:var(--text-muted)">много</td>
+                            </tr>
+                            <tr>
+                                <td class="pos">old</td>
+                                <td class="comp">older / elder</td>
+                                <td class="sup">the oldest / eldest</td>
+                                <td style="color:var(--text-muted)">старый / старший</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note note-amber">
+                    <span class="note-icon">⚠️</span>
+                    <span><strong>elder / eldest</strong> — только для членов семьи: my <em>elder</em> sister.
+                        <strong>older / oldest</strong> — для всего остального: this building is <em>older</em>.</span>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Большая таблица примеров -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📋</span>
+                    Таблица примеров
+                </h2>
+
+                <div class="card" style="padding:0; overflow:hidden; margin-bottom:32px">
+                    <table class="adj-table">
+                        <thead>
+                            <tr>
+                                <th>Positive</th>
+                                <th>Comparative</th>
+                                <th>Superlative</th>
+                                <th>Правило</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pos">tall</td>
+                                <td class="comp">taller</td>
+                                <td class="sup">the tallest</td>
+                                <td><span class="rule-tag">+ er/est</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">small</td>
+                                <td class="comp">smaller</td>
+                                <td class="sup">the smallest</td>
+                                <td><span class="rule-tag">+ er/est</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">nice</td>
+                                <td class="comp">nicer</td>
+                                <td class="sup">the nicest</td>
+                                <td><span class="rule-tag">+ r/st</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">big</td>
+                                <td class="comp">bigger</td>
+                                <td class="sup">the biggest</td>
+                                <td><span class="rule-tag">удвоение</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">hot</td>
+                                <td class="comp">hotter</td>
+                                <td class="sup">the hottest</td>
+                                <td><span class="rule-tag">удвоение</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">happy</td>
+                                <td class="comp">happier</td>
+                                <td class="sup">the happiest</td>
+                                <td><span class="rule-tag">y → ier/iest</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">funny</td>
+                                <td class="comp">funnier</td>
+                                <td class="sup">the funniest</td>
+                                <td><span class="rule-tag">y → ier/iest</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">interesting</td>
+                                <td class="comp">more interesting</td>
+                                <td class="sup">the most interesting</td>
+                                <td><span class="rule-tag">more/most</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">expensive</td>
+                                <td class="comp">more expensive</td>
+                                <td class="sup">the most expensive</td>
+                                <td><span class="rule-tag">more/most</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">beautiful</td>
+                                <td class="comp">more beautiful</td>
+                                <td class="sup">the most beautiful</td>
+                                <td><span class="rule-tag">more/most</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">good</td>
+                                <td class="comp">better</td>
+                                <td class="sup">the best</td>
+                                <td><span class="rule-tag"
+                                        style="background:var(--red-light);color:var(--red)">исключение</span></td>
+                            </tr>
+                            <tr>
+                                <td class="pos">bad</td>
+                                <td class="comp">worse</td>
+                                <td class="sup">the worst</td>
+                                <td><span class="rule-tag"
+                                        style="background:var(--red-light);color:var(--red)">исключение</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Как использовать в предложении -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--purple-light)">💬</span>
+                    Как использовать в предложении
+                </h2>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">Сравнительная + than</div>
+                        <div class="rule rule-green">
+                            <div class="rule-label">Subject + is/are + comparative + than</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">She is <em>taller than</em> me.</div>
+                                    <div class="ex">This is <em>more expensive than</em> that.</div>
+                                    <div class="ex">Today is <em>hotter than</em> yesterday.</div>
+                                    <div class="ex">He runs <em>faster than</em> his brother.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Превосходная + in / of</div>
+                        <div class="rule rule-purple">
+                            <div class="rule-label">the + superlative + in (место) / of (группа)</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">She is <em>the tallest</em> in the class.</div>
+                                    <div class="ex">It's <em>the most beautiful</em> city in the world.</div>
+                                    <div class="ex">He is <em>the best</em> of all players.</div>
+                                    <div class="ex">This is <em>the worst</em> film of the year.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">as ... as (такой же)</div>
+                        <div class="rule rule-blue">
+                            <div class="rule-label">as + positive + as = одинаково</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex">He is <em>as tall as</em> his father.</div>
+                                    <div class="ex">This book is <em>as interesting as</em> that one.</div>
+                                </div>
+                                <div class="note note-blue" style="margin-top:10px">
+                                    <span class="note-icon">💡</span>
+                                    not as ... as = менее чем: She is <em>not as tall as</em> her sister.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Усиление сравнения</div>
+                        <div class="rule rule-blue">
+                            <div class="rule-label">much / a lot / far + comparative</div>
+                            <div class="rule-body">
+                                <div class="example-list">
+                                    <div class="ex"><em>Much taller</em> than expected.</div>
+                                    <div class="ex"><em>A lot more expensive</em> than I thought.</div>
+                                    <div class="ex"><em>Far better</em> than before.</div>
+                                    <div class="ex"><em>A bit colder</em> today. <span
+                                            style="color:var(--text-muted);font-size:.85em">(немного)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Formula -->
+                <div class="formula-box">
+                    <h3>📌 Краткая формула</h3>
+                    <div class="formula-tags">
+                        <span class="formula-tag">1 слог → + er / the ...est</span>
+                        <span class="formula-tag">-e на конце → + r / the ...st</span>
+                        <span class="formula-tag">гл+согл → удвоить + er/est</span>
+                        <span class="formula-tag">-y → ier / the ...iest</span>
+                        <span class="formula-tag">2+ слога → more / the most</span>
+                        <span class="formula-tag">good → better → the best</span>
+                        <span class="formula-tag">bad → worse → the worst</span>
+                        <span class="formula-tag">сравн. + than</span>
+                        <span class="formula-tag">the + превосх. + in/of</span>
+                    </div>
+                    <div
+                        style="margin-top:24px; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:var(--r-md); font-size:1rem; color:rgba(255,255,255,0.8)">
+                        💡 <strong style="color:#fff">She is taller than me.</strong> &nbsp;·&nbsp; <strong
+                            style="color:#fff">This is the most beautiful place in the world.</strong> &nbsp;·&nbsp;
+                        <strong style="color:#fff">Today is worse than yesterday.</strong>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/nav.js"></script>
+</body>
+
+</html>
