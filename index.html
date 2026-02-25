@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Book</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .stat-divider {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.12);
+            align-self: stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+
+        <main class="main">
+
+            <section class="hero">
+                <div class="hero-eyebrow">✦ Личная шпаргалка</div>
+                <h1>English<br><em>Grammar</em> Book</h1>
+                <p class="hero-sub">Инфографика по грамматике — пополняется по мере изучения тем.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">темы изучено</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">раздела</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">∞</span>
+                        <span class="stat-label">впереди</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content">
+
+                <div class="group-heading">Основы</div>
+                <div class="topics-grid">
+
+                    <a href="topics/articles.html" class="topic-card">
+                        <div class="topic-icon">📘</div>
+                        <div class="topic-category">Basics</div>
+                        <div class="topic-name">Артикли</div>
+                        <div class="topic-desc">a / an, the и нулевой артикль — когда и какой использовать.</div>
+                        <div class="topic-arrow">→</div>
+                    </a>
+
+                    <a href="topics/pronouns.html" class="topic-card">
+                        <div class="topic-icon">👤</div>
+                        <div class="topic-category">Basics</div>
+                        <div class="topic-name">Местоимения</div>
+                        <div class="topic-desc">Личные, объектные, притяжательные — все формы в одном месте.</div>
+                        <div class="topic-arrow">→</div>
+                    </a>
+
+                    <a href="topics/to-be.html" class="topic-card">
+                        <div class="topic-icon">🔵</div>
+                        <div class="topic-category">Basics</div>
+                        <div class="topic-name">To Be</div>
+                        <div class="topic-desc">am / is / are — утверждение, отрицание, вопрос и сокращения.</div>
+                        <div class="topic-arrow">→</div>
+                    </a>
+
+                </div>
+
+                <div class="group-heading">Глаголы</div>
+                <div class="topics-grid">
+
+                    <div class="topic-card locked">
+                        <div class="topic-icon" style="background:var(--surface-2)">⏱️</div>
+                        <div class="topic-category">Verbs</div>
+                        <div class="topic-name">Present Simple</div>
+                        <div class="topic-desc">Общие факты, привычки, расписания.</div>
+                        <div class="topic-arrow" style="color:var(--text-muted)">скоро</div>
+                    </div>
+
+                    <div class="topic-card locked">
+                        <div class="topic-icon" style="background:var(--surface-2)">🎬</div>
+                        <div class="topic-category">Verbs</div>
+                        <div class="topic-name">Present Continuous</div>
+                        <div class="topic-desc">Действие прямо сейчас или в процессе.</div>
+                        <div class="topic-arrow" style="color:var(--text-muted)">скоро</div>
+                    </div>
+
+                    <div class="topic-card locked">
+                        <div class="topic-icon" style="background:var(--surface-2)">⏮️</div>
+                        <div class="topic-category">Verbs</div>
+                        <div class="topic-name">Past Simple</div>
+                        <div class="topic-desc">Завершённые действия в прошлом.</div>
+                        <div class="topic-arrow" style="color:var(--text-muted)">скоро</div>
+                    </div>
+
+                </div>
+
+                <div class="group-heading">Синтаксис</div>
+                <div class="topics-grid">
+
+                    <div class="topic-card locked">
+                        <div class="topic-icon" style="background:var(--surface-2)">🔀</div>
+                        <div class="topic-category">Structure</div>
+                        <div class="topic-name">Word Order</div>
+                        <div class="topic-desc">Правила порядка слов в предложении.</div>
+                        <div class="topic-arrow" style="color:var(--text-muted)">скоро</div>
+                    </div>
+
+                    <div class="topic-card locked">
+                        <div class="topic-icon" style="background:var(--surface-2)">❓</div>
+                        <div class="topic-category">Structure</div>
+                        <div class="topic-name">Questions</div>
+                        <div class="topic-desc">Как строить вопросительные предложения.</div>
+                        <div class="topic-arrow" style="color:var(--text-muted)">скоро</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="assets/nav.js"></script>
+</body>
+
+</html>

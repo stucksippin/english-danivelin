@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Be — English Grammar Book</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .conj-hero {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .conj-pill {
+            flex: 1;
+            min-width: 180px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .conj-pill .cp-pronoun {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .conj-pill .cp-form {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .conj-pill .cp-neg {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--red);
+            margin-top: 4px;
+        }
+
+        .conj-pill .cp-short {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--blue-dark);
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .col-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .col-card .cc-header {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cc-pos .cc-header {
+            color: var(--green);
+            border-bottom-color: var(--green);
+        }
+
+        .cc-neg .cc-header {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+
+        .cc-que .cc-header {
+            color: var(--blue);
+            border-bottom-color: var(--blue);
+        }
+
+        .contractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+        }
+
+        .contraction-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contraction-item .ci-from {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .contraction-item .ci-to {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--blue-dark);
+            background: var(--blue-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .contraction-item.neg .ci-to {
+            color: var(--red);
+            background: var(--red-light);
+        }
+
+        .short-answers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .short-answer {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .short-answer .sa-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 700px) {
+            .three-col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main">
+
+            <header class="page-header">
+                <a href="../index.html" class="back-link">← Все темы</a>
+                <div class="page-header-eyebrow">🔵 Basics</div>
+                <h1>To Be</h1>
+                <p class="header-sub">am / is / are — утверждение, отрицание, вопрос, сокращения</p>
+            </header>
+
+            <div class="content">
+
+                <!-- Спряжение: три формы -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📐</span>
+                    Три формы Present Simple
+                </h2>
+
+                <div class="conj-hero">
+                    <div class="conj-pill">
+                        <div class="cp-pronoun">I</div>
+                        <div class="cp-form">am</div>
+                        <div class="cp-short">I'm · I'm not</div>
+                        <div class="cp-neg">am not / I'm not</div>
+                    </div>
+                    <div class="conj-pill">
+                        <div class="cp-pronoun">He / She / It</div>
+                        <div class="cp-form">is</div>
+                        <div class="cp-short">he's · she's · it's</div>
+                        <div class="cp-neg">is not / isn't</div>
+                    </div>
+                    <div class="conj-pill">
+                        <div class="cp-pronoun">You / We / They</div>
+                        <div class="cp-form">are</div>
+                        <div class="cp-short">you're · we're · they're</div>
+                        <div class="cp-neg">are not / aren't</div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Утверждение, Отрицание, Вопрос -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">🔀</span>
+                    Утверждение · Отрицание · Вопрос
+                </h2>
+
+                <div class="three-col">
+                    <div class="col-card cc-pos">
+                        <div class="cc-header">✚ Утверждение</div>
+                        <div class="rule rule-green" style="margin-bottom:10px">
+                            <div class="rule-label">Subject + am/is/are</div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex"><em>I am</em> ready.</div>
+                            <div class="ex"><em>She is</em> here.</div>
+                            <div class="ex"><em>They are</em> students.</div>
+                            <div class="ex"><em>It is</em> cold today.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-card cc-neg">
+                        <div class="cc-header">− Отрицание</div>
+                        <div class="rule rule-red" style="margin-bottom:10px">
+                            <div class="rule-label">Subject + am/is/are + not</div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex"><em>I am not</em> late.</div>
+                            <div class="ex"><em>He isn't</em> at home.</div>
+                            <div class="ex"><em>We aren't</em> busy.</div>
+                            <div class="ex"><em>It isn't</em> ready.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-card cc-que">
+                        <div class="cc-header">? Вопрос</div>
+                        <div class="rule rule-blue" style="margin-bottom:10px">
+                            <div class="rule-label">Am/Is/Are + Subject?</div>
+                        </div>
+                        <div class="example-list">
+                            <div class="ex"><em>Am</em> I right?</div>
+                            <div class="ex"><em>Is</em> she tired?</div>
+                            <div class="ex"><em>Are</em> they ready?</div>
+                            <div class="ex"><em>Is</em> it cold?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Краткие ответы -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--green-light)">✅</span>
+                    Краткие ответы
+                </h2>
+
+                <div class="short-answers-grid" style="margin-bottom:32px">
+                    <div class="short-answer"><span class="sa-icon">✅</span> Yes, I <strong>am</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">❌</span> No, I'm <strong>not</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">✅</span> Yes, he <strong>is</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">❌</span> No, he <strong>isn't</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">✅</span> Yes, she <strong>is</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">❌</span> No, she <strong>isn't</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">✅</span> Yes, they <strong>are</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">❌</span> No, they <strong>aren't</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">✅</span> Yes, we <strong>are</strong>.</div>
+                    <div class="short-answer"><span class="sa-icon">❌</span> No, we <strong>aren't</strong>.</div>
+                </div>
+
+                <div class="note note-amber">
+                    <span class="note-icon">⚠️</span>
+                    <span>В кратких ответах <strong>Yes, I'm.</strong> — так говорить нельзя. Только <strong>Yes, I
+                            am.</strong> (без сокращения в утвердительном ответе)</span>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Сокращения -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">🔗</span>
+                    Сокращения (Contractions)
+                </h2>
+
+                <div class="contractions-grid">
+                    <div class="contraction-item">
+                        <span class="ci-from">I am</span>→<span class="ci-to">I'm</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">he is</span>→<span class="ci-to">he's</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">she is</span>→<span class="ci-to">she's</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">it is</span>→<span class="ci-to">it's</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">you are</span>→<span class="ci-to">you're</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">we are</span>→<span class="ci-to">we're</span>
+                    </div>
+                    <div class="contraction-item">
+                        <span class="ci-from">they are</span>→<span class="ci-to">they're</span>
+                    </div>
+                    <div class="contraction-item neg">
+                        <span class="ci-from">is not</span>→<span class="ci-to">isn't</span>
+                    </div>
+                    <div class="contraction-item neg">
+                        <span class="ci-from">are not</span>→<span class="ci-to">aren't</span>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- Полная таблица спряжения -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📊</span>
+                    Полная таблица
+                </h2>
+
+                <div class="card" style="padding:0; overflow:hidden; margin-bottom:32px">
+                    <table class="conj-table">
+                        <thead>
+                            <tr>
+                                <th>Местоимение</th>
+                                <th>Форма</th>
+                                <th>Краткая</th>
+                                <th>Отрицание</th>
+                                <th>Пример</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pronoun-cell">I</td>
+                                <td class="form-cell">am</td>
+                                <td class="form-cell" style="color:var(--blue)">I'm</td>
+                                <td class="neg-cell">am not / I'm not</td>
+                                <td class="example-cell">I am a student.</td>
+                            </tr>
+                            <tr>
+                                <td class="pronoun-cell">He / She / It</td>
+                                <td class="form-cell">is</td>
+                                <td class="form-cell" style="color:var(--blue)">he's / she's / it's</td>
+                                <td class="neg-cell">isn't</td>
+                                <td class="example-cell">She is happy.</td>
+                            </tr>
+                            <tr>
+                                <td class="pronoun-cell">You / We / They</td>
+                                <td class="form-cell">are</td>
+                                <td class="form-cell" style="color:var(--blue)">you're / we're / they're</td>
+                                <td class="neg-cell">aren't</td>
+                                <td class="example-cell">They are friends.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Что выражает to be -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--amber-light)">💬</span>
+                    Что выражает to be
+                </h2>
+
+                <div class="grid-3" style="margin-bottom:32px">
+                    <div class="card">
+                        <div class="card-title">Профессия / роль</div>
+                        <div class="example-list">
+                            <div class="ex">I <em>am</em> a doctor.</div>
+                            <div class="ex">She <em>is</em> a teacher.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Состояние / чувство</div>
+                        <div class="example-list">
+                            <div class="ex">I <em>am</em> tired.</div>
+                            <div class="ex">He <em>is</em> hungry.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Местонахождение</div>
+                        <div class="example-list">
+                            <div class="ex">She <em>is</em> at home.</div>
+                            <div class="ex">They <em>are</em> in Moscow.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Возраст</div>
+                        <div class="example-list">
+                            <div class="ex">I <em>am</em> 25 years old.</div>
+                            <div class="ex">He <em>is</em> 30.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Национальность</div>
+                        <div class="example-list">
+                            <div class="ex">She <em>is</em> Russian.</div>
+                            <div class="ex">They <em>are</em> French.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Описание предмета</div>
+                        <div class="example-list">
+                            <div class="ex">The book <em>is</em> interesting.</div>
+                            <div class="ex">It <em>is</em> very cold.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formula -->
+                <div class="formula-box">
+                    <h3>📌 Запомни</h3>
+                    <div class="formula-tags">
+                        <span class="formula-tag">I → am</span>
+                        <span class="formula-tag">He / She / It → is</span>
+                        <span class="formula-tag">You / We / They → are</span>
+                        <span class="formula-tag">+ not = отрицание</span>
+                        <span class="formula-tag">am/is/are + ? = вопрос</span>
+                        <span class="formula-tag">Yes, I am. (не I'm!)</span>
+                    </div>
+                    <div
+                        style="margin-top:24px; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:var(--r-md); font-size:1rem; color:rgba(255,255,255,0.8)">
+                        💡 to be = <strong style="color:#fff">быть · находиться · являться</strong> — самый частый
+                        глагол в английском
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/nav.js"></script>
+</body>
+
+</html>
