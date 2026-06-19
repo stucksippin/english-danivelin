@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все Времена — English Grammar Book</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        /* Tense cards */
+        .tense-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+        }
+
+        .tense-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .tense-header {
+            padding: 20px 24px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tense-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .tense-use {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .tense-body {
+            padding: 14px 24px;
+        }
+
+        .formula-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 7px;
+        }
+
+        .formula-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .fsign {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .fsign-pos { background: var(--green-light); color: var(--green); }
+        .fsign-neg { background: var(--red-light); color: var(--red); }
+        .fsign-que { background: var(--blue-light); color: var(--blue-dark); }
+
+        .formula-text {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .tense-footer {
+            padding: 10px 24px 14px;
+            background: var(--surface-2);
+            border-top: 1px solid var(--border);
+        }
+
+        .tense-ex {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .tense-ex strong {
+            font-style: normal;
+            color: var(--blue-dark);
+        }
+
+        .markers-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .marker {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-pill);
+            padding: 2px 9px;
+            color: var(--text-muted);
+        }
+
+        /* Tenses grid */
+        .tenses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        /* Overview table */
+        .tenses-overview {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tenses-overview thead tr {
+            background: var(--navy);
+        }
+
+        .tenses-overview thead th {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .tenses-overview tbody tr {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+
+        .tenses-overview tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .tenses-overview tbody tr:hover {
+            background: var(--surface-2);
+        }
+
+        .tenses-overview tbody tr.group-sep td {
+            background: var(--surface-2);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 7px 16px;
+            border-top: 2px solid var(--border);
+        }
+
+        .tenses-overview td {
+            padding: 11px 16px;
+            font-size: 0.88rem;
+            vertical-align: middle;
+        }
+
+        .td-name {
+            font-weight: 700;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .td-struct {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--blue-dark);
+        }
+
+        .td-ex {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .td-when {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 700px) {
+            .tenses-grid { grid-template-columns: 1fr; }
+            .tenses-overview .td-ex,
+            .tenses-overview .td-when { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main">
+
+            <header class="page-header">
+                <a href="../index.html" class="back-link">← Все темы</a>
+                <div class="page-header-eyebrow">Verbs</div>
+                <h1>Все Времена</h1>
+                <p class="header-sub">12 времён английского языка — структура, когда использовать, сигнальные слова</p>
+            </header>
+
+            <div class="content">
+
+                <!-- OVERVIEW TABLE -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">📊</span>
+                    Обзорная таблица
+                </h2>
+
+                <div class="card" style="padding:0; overflow:hidden; margin-bottom:40px">
+                    <table class="tenses-overview">
+                        <thead>
+                            <tr>
+                                <th>Время</th>
+                                <th>Структура (+)</th>
+                                <th>Пример</th>
+                                <th>Когда использовать</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="group-sep">
+                                <td colspan="4">Present — Настоящее</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Present Simple</td>
+                                <td class="td-struct">S + V1 (s/es)</td>
+                                <td class="td-ex">I work every day.</td>
+                                <td class="td-when">Факты, привычки, расписания</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Present Continuous</td>
+                                <td class="td-struct">S + am/is/are + V-ing</td>
+                                <td class="td-ex">I am working now.</td>
+                                <td class="td-when">Действие прямо сейчас</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Present Perfect</td>
+                                <td class="td-struct">S + have/has + V3</td>
+                                <td class="td-ex">I have finished it.</td>
+                                <td class="td-when">Прошлое с результатом в настоящем</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Present Perfect Continuous</td>
+                                <td class="td-struct">S + have/has + been + V-ing</td>
+                                <td class="td-ex">I have been working for 2h.</td>
+                                <td class="td-when">Процесс начат в прошлом, длится сейчас</td>
+                            </tr>
+                            <tr class="group-sep">
+                                <td colspan="4">Past — Прошедшее</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Past Simple</td>
+                                <td class="td-struct">S + V2 (V+ed)</td>
+                                <td class="td-ex">I worked yesterday.</td>
+                                <td class="td-when">Завершённое действие в прошлом</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Past Continuous</td>
+                                <td class="td-struct">S + was/were + V-ing</td>
+                                <td class="td-ex">I was working at 5 pm.</td>
+                                <td class="td-when">Длящееся действие в прошлый момент</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Past Perfect</td>
+                                <td class="td-struct">S + had + V3</td>
+                                <td class="td-ex">I had left before she came.</td>
+                                <td class="td-when">Действие до другого прошлого события</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Past Perfect Continuous</td>
+                                <td class="td-struct">S + had + been + V-ing</td>
+                                <td class="td-ex">He had been waiting for 2h.</td>
+                                <td class="td-when">Длительность до прошлого момента</td>
+                            </tr>
+                            <tr class="group-sep">
+                                <td colspan="4">Future — Будущее</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Future Simple</td>
+                                <td class="td-struct">S + will + V1</td>
+                                <td class="td-ex">I will call you.</td>
+                                <td class="td-when">Решение, предсказание, обещание</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Future Continuous</td>
+                                <td class="td-struct">S + will + be + V-ing</td>
+                                <td class="td-ex">I will be sleeping then.</td>
+                                <td class="td-when">Длящееся действие в будущий момент</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Future Perfect</td>
+                                <td class="td-struct">S + will + have + V3</td>
+                                <td class="td-ex">I will have finished by 5.</td>
+                                <td class="td-when">Завершение до момента в будущем</td>
+                            </tr>
+                            <tr>
+                                <td class="td-name">Future Perfect Continuous</td>
+                                <td class="td-struct">S + will + have + been + V-ing</td>
+                                <td class="td-ex">I'll have been working for 2h.</td>
+                                <td class="td-when">Длительность до будущего момента</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- PRESENT TENSES -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--blue-light)">🌅</span>
+                    Present — Настоящее
+                </h2>
+
+                <div class="tenses-grid">
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Present Simple</div>
+                            <div class="tense-use">Факты, привычки, регулярные действия, расписания</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + V1 &nbsp;/&nbsp; He/She/It + V1+s/es</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + do/does not + V1</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Do/Does + S + V1?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">She <strong>works</strong> every Monday. / He <strong>doesn't</strong> drink coffee.</div>
+                            <div class="markers-list">
+                                <span class="marker">always</span>
+                                <span class="marker">usually</span>
+                                <span class="marker">often</span>
+                                <span class="marker">sometimes</span>
+                                <span class="marker">never</span>
+                                <span class="marker">every day</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Present Continuous</div>
+                            <div class="tense-use">Действие прямо сейчас, временный процесс или ближайший план</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + am/is/are + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + am/is/are + not + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Am/Is/Are + S + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>am reading</strong> right now. / She <strong>is not working</strong> today.</div>
+                            <div class="markers-list">
+                                <span class="marker">now</span>
+                                <span class="marker">right now</span>
+                                <span class="marker">at the moment</span>
+                                <span class="marker">currently</span>
+                                <span class="marker">today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Present Perfect</div>
+                            <div class="tense-use">Прошлое действие с результатом или связью с настоящим</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + have/has + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + have/has + not + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Have/Has + S + V3?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>have finished</strong> my work. / She <strong>has never been</strong> to Paris.</div>
+                            <div class="markers-list">
+                                <span class="marker">just</span>
+                                <span class="marker">already</span>
+                                <span class="marker">yet</span>
+                                <span class="marker">ever</span>
+                                <span class="marker">never</span>
+                                <span class="marker">for</span>
+                                <span class="marker">since</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Present Perfect Continuous</div>
+                            <div class="tense-use">Процесс начат в прошлом и продолжается до сих пор</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + have/has + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + have/has + not + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Have/Has + S + been + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>have been studying</strong> for 3 hours.</div>
+                            <div class="markers-list">
+                                <span class="marker">for</span>
+                                <span class="marker">since</span>
+                                <span class="marker">all day</span>
+                                <span class="marker">how long</span>
+                                <span class="marker">recently</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- PAST TENSES -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--purple-light)">🌆</span>
+                    Past — Прошедшее
+                </h2>
+
+                <div class="tenses-grid">
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Past Simple</div>
+                            <div class="tense-use">Завершённое действие в определённый момент прошлого</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + V2 (V+ed для правильных)</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + did not + V1</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Did + S + V1?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">She <strong>worked</strong> late. / I <strong>went</strong> home yesterday.</div>
+                            <div class="markers-list">
+                                <span class="marker">yesterday</span>
+                                <span class="marker">last week</span>
+                                <span class="marker">ago</span>
+                                <span class="marker">in 2020</span>
+                                <span class="marker">when</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Past Continuous</div>
+                            <div class="tense-use">Длящееся действие в конкретный момент прошлого</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + was/were + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + was/were + not + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Was/Were + S + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>was sleeping</strong> at 10 pm. / They <strong>were talking</strong> when I came.</div>
+                            <div class="markers-list">
+                                <span class="marker">at 5 pm yesterday</span>
+                                <span class="marker">while</span>
+                                <span class="marker">when</span>
+                                <span class="marker">all night</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Past Perfect</div>
+                            <div class="tense-use">Действие завершилось до другого прошлого события</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + had + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + had not (hadn't) + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Had + S + V3?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">She <strong>had left</strong> before I arrived.</div>
+                            <div class="markers-list">
+                                <span class="marker">before</span>
+                                <span class="marker">after</span>
+                                <span class="marker">already</span>
+                                <span class="marker">by the time</span>
+                                <span class="marker">when</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Past Perfect Continuous</div>
+                            <div class="tense-use">Длительность процесса до определённого прошлого момента</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + had + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + had not + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Had + S + been + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">He <strong>had been waiting</strong> for 2 hours when she arrived.</div>
+                            <div class="markers-list">
+                                <span class="marker">for</span>
+                                <span class="marker">since</span>
+                                <span class="marker">before</span>
+                                <span class="marker">all day</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- FUTURE TENSES -->
+                <h2 class="section-title">
+                    <span class="section-icon" style="background:var(--green-light)">🌄</span>
+                    Future — Будущее
+                </h2>
+
+                <div class="tenses-grid">
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Future Simple</div>
+                            <div class="tense-use">Спонтанное решение, предсказание, обещание или просьба</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + will + V1</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + will not (won't) + V1</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Will + S + V1?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>will call</strong> you tomorrow. / She <strong>won't</strong> come.</div>
+                            <div class="markers-list">
+                                <span class="marker">tomorrow</span>
+                                <span class="marker">next week</span>
+                                <span class="marker">soon</span>
+                                <span class="marker">one day</span>
+                                <span class="marker">in the future</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Future Continuous</div>
+                            <div class="tense-use">Длящееся действие в конкретный момент будущего</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + will + be + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + will + not + be + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Will + S + be + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>will be sleeping</strong> at midnight. / She <strong>will be working</strong> then.</div>
+                            <div class="markers-list">
+                                <span class="marker">at this time tomorrow</span>
+                                <span class="marker">at noon</span>
+                                <span class="marker">this time next week</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Future Perfect</div>
+                            <div class="tense-use">Действие завершится к определённому моменту в будущем</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + will + have + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + will + not + have + V3</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Will + S + have + V3?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">I <strong>will have finished</strong> by 5 pm.</div>
+                            <div class="markers-list">
+                                <span class="marker">by</span>
+                                <span class="marker">by the time</span>
+                                <span class="marker">before</span>
+                                <span class="marker">in X years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tense-card">
+                        <div class="tense-header">
+                            <div class="tense-name">Future Perfect Continuous</div>
+                            <div class="tense-use">Длительность процесса к определённому моменту будущего</div>
+                        </div>
+                        <div class="tense-body">
+                            <div class="formula-row">
+                                <span class="fsign fsign-pos">+</span>
+                                <span class="formula-text">S + will + have + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-neg">−</span>
+                                <span class="formula-text">S + will + not + have + been + V-ing</span>
+                            </div>
+                            <div class="formula-row">
+                                <span class="fsign fsign-que">?</span>
+                                <span class="formula-text">Will + S + have + been + V-ing?</span>
+                            </div>
+                        </div>
+                        <div class="tense-footer">
+                            <div class="tense-ex">By June, I <strong>will have been learning</strong> English for 2 years.</div>
+                            <div class="markers-list">
+                                <span class="marker">by</span>
+                                <span class="marker">for</span>
+                                <span class="marker">by the time</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Summary -->
+                <div class="formula-box">
+                    <h3>Запомни структуру</h3>
+                    <div class="formula-tags">
+                        <span class="formula-tag">Simple = V1 / V2 / will+V</span>
+                        <span class="formula-tag">Continuous = be + V-ing</span>
+                        <span class="formula-tag">Perfect = have/had + V3</span>
+                        <span class="formula-tag">Perfect Continuous = have/had + been + V-ing</span>
+                        <span class="formula-tag">Present → am/is/are</span>
+                        <span class="formula-tag">Past → was/were · had</span>
+                        <span class="formula-tag">Future → will</span>
+                    </div>
+                    <div style="margin-top:24px; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:var(--r-md); font-size:0.95rem; color:rgba(255,255,255,0.8)">
+                        Continuous = <strong style="color:#fff">процесс</strong> &nbsp;·&nbsp; Perfect = <strong style="color:#fff">результат / до события</strong> &nbsp;·&nbsp; Perfect Continuous = <strong style="color:#fff">длительность процесса</strong>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/nav.js"></script>
+</body>
+
+</html>

@@ -226,7 +226,7 @@ img {
 
 .page-header {
     background: var(--navy);
-    padding: 52px 52px 44px;
+    padding: 52px max(52px, calc((100% - 1100px) / 2)) 44px;
     position: relative;
     overflow: hidden;
 }
@@ -282,6 +282,7 @@ img {
 .content {
     padding: 48px 52px 80px;
     max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* ============================================
@@ -813,7 +814,7 @@ img {
 
 .hero {
     background: var(--navy);
-    padding: 80px 52px 100px;
+    padding: 80px max(52px, calc((100% - 1100px) / 2)) 100px;
     position: relative;
     overflow: hidden;
 }
@@ -921,6 +922,10 @@ img {
 .topic-card.locked {
     opacity: 0.5;
     pointer-events: none;
+}
+
+.topic-card.wip {
+    opacity: 0.55;
 }
 
 .topic-icon {
@@ -1031,6 +1036,105 @@ img {
 }
 
 /* ============================================
+   THREE-COLUMN LAYOUT (+ / - / ?)
+   ============================================ */
+
+.three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.col-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.col-card .cc-header {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cc-pos .cc-header { color: var(--green); border-bottom-color: var(--green); }
+.cc-neg .cc-header { color: var(--red);   border-bottom-color: var(--red); }
+.cc-que .cc-header { color: var(--blue);  border-bottom-color: var(--blue); }
+
+/* ============================================
+   FORMULA ROW (structure display)
+   ============================================ */
+
+.formula-row-large {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 16px 24px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.formula-row-large:last-of-type {
+    margin-bottom: 0;
+}
+
+.frl-sign {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.frl-pos { background: var(--green-light); color: var(--green); }
+.frl-neg { background: var(--red-light);   color: var(--red); }
+.frl-que { background: var(--blue-light);  color: var(--blue-dark); }
+
+.frl-formula {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+/* ============================================
+   SIGNAL WORDS
+   ============================================ */
+
+.signal-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.sw {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    padding: 5px 14px;
+    border-radius: var(--r-pill);
+    border: 1px solid rgba(74, 144, 217, 0.25);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
@@ -1060,7 +1164,8 @@ img {
     }
 
     .grid-2,
-    .grid-3 {
+    .grid-3,
+    .three-col {
         grid-template-columns: 1fr;
     }
 
